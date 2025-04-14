@@ -47,37 +47,24 @@ high-resolution medical images.*
 <hr />
 
 
-## Architecture overview of UNETR++
-Overview of our UNETR++ approach with hierarchical encoder-decoder structure. The 3D patches are fed to the encoder, whose outputs are then connected to the decoder via skip connections followed by convolutional blocks to produce the final segmentation mask. The focus of our design is the introduction of an _efficient paired-attention_ (EPA) block. Each EPA block performs two tasks using parallel attention modules with shared keys-queries and different value layers to efficiently learn enriched spatial-channel feature representations. As illustrated in the EPA block diagram (on the right), the first (top) attention module aggregates the spatial features by a weighted sum of the projected features in a linear manner to compute the spatial attention maps, while the second (bottom) attention module emphasizes the dependencies in the channels and computes the channel attention maps. Finally, the outputs of the two attention modules are fused and passed to convolutional blocks to enhance the feature representation, leading to better segmentation masks.
-![Architecture overview](media/UNETR++_Block_Diagram.jpg)
+## Architecture overview of Zig-RiR
+Overview of our Zig-RiR with hierarchical encoder-decoder structure. Zig-RiR adopts a U-shaped
+architecture consisting of a convolutional stem, a Zig-RiR
+encoder, and a plain decoder. The key innovation lies in
+the Zig-RiR block, which features a nested RWKV-in-RWKV
+structure and a novel Zigzag WKV attention mechanism.
+![Architecture overview](asset/overview.jpg)
 
 <hr />
 
 
-## Results
+## visualizaion Results
 
-### Synapse Dataset
-State-of-the-art comparison on the abdominal multi-organ Synapse dataset. We report both the segmentation performance (DSC, HD95) and model complexity (parameters and FLOPs).
-Our proposed UNETR++ achieves favorable segmentation performance against existing methods, while being considerably reducing the model complexity. Best results are in bold. 
-Abbreviations stand for: Spl: _spleen_, RKid: _right kidney_, LKid: _left kidney_, Gal: _gallbladder_, Liv: _liver_, Sto: _stomach_, Aor: _aorta_, Pan: _pancreas_. 
-Best results are in bold.
+### on ISIC & Synapse & ACDC Dataset
 
-![Synapse Results](media/synapse_results.png)
+Qualitative comparison on skin leison segmentation (ISIC) and multi-organ segmentation (Synapse & ACDC) tasks. Our proposed Zig-RiR achieves accurate segmentation performance against existing methods.
 
-<hr />
-
-## Qualitative Comparison
-
-### Synapse Dataset
-Qualitative comparison on multi-organ segmentation task. Here, we compare our UNETR++ with existing methods: UNETR, Swin UNETR, and nnFormer. 
-The different abdominal organs are shown in the legend below the examples. Existing methods struggle to correctly segment different organs (marked in red dashed box). 
-Our UNETR++ achieves promising segmentation performance by accurately segmenting the organs.
-![Synapse Qual Results](media/UNETR++_results_fig_synapse.jpg)
-
-### ACDC Dataset
-Qualitative comparison on the ACDC dataset. We compare our UNETR++ with existing methods: UNETR and nnFormer. It is noticeable that the existing methods struggle to correctly segment different organs (marked in red dashed box). Our UNETR++ achieves favorable segmentation performance by accurately segmenting the organs.  Our UNETR++ achieves promising segmentation performance by accurately segmenting the organs.
-![ACDC Qual Results](media/acdc_vs_unetr_suppl.jpg)
-
+![Synapse Results](asset/vis.jpg)
 
 <hr />
 
