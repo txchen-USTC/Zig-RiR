@@ -53,6 +53,7 @@ architecture consisting of a convolutional stem, a Zig-RiR
 encoder, and a plain decoder. The key innovation lies in
 the Zig-RiR block, which features a nested RWKV-in-RWKV
 structure and a novel Zigzag WKV attention mechanism.
+
 ![Architecture overview](asset/overview.jpg)
 
 <hr />
