@@ -59,9 +59,9 @@ structure and a novel Zigzag WKV attention mechanism.
 <hr />
 
 
-## visualizaion Results
+## Cisualizaion Results
 
-### on ISIC & Synapse & ACDC Dataset
+### ISIC & Synapse & ACDC Dataset
 
 Qualitative comparison on skin leison segmentation (ISIC) and multi-organ segmentation (Synapse & ACDC) tasks. Our proposed Zig-RiR achieves accurate segmentation performance against existing methods.
 
@@ -74,8 +74,8 @@ The code is tested with PyTorch 1.11.0 and CUDA 11.3. After cloning the reposito
 
 1. Create and activate conda environment
 ```shell
-conda create --name unetr_pp python=3.8
-conda activate unetr_pp
+conda create --name zig_rir python=3.8
+conda activate zig_rir
 ```
 2. Install PyTorch and torchvision
 ```shell
@@ -89,7 +89,7 @@ pip install -r requirements.txt
 
 
 ## Dataset
-We follow the same dataset preprocessing as in [nnFormer](https://github.com/282857341/nnFormer). We conducted extensive experiments on five benchmarks: Synapse, BTCV, ACDC, BRaTs, and Decathlon-Lung. 
+When dealing with 3D datasets Synapse and ACDC, we follow the same dataset preprocessing as in [nnFormer](https://github.com/282857341/nnFormer).
 
 The dataset folders for Synapse should be organized as follows: 
 
@@ -125,49 +125,20 @@ The dataset folders for Synapse should be organized as follows:
            ├── Task001_ACDC
  ```
  
-  The dataset folders for Decathlon-Lung should be organized as follows: 
-
-```
-./DATASET_Lungs/
-  ├── unetr_pp_raw/
-      ├── unetr_pp_raw_data/
-           ├── Task06_Lung/
-              ├── imagesTr/
-              ├── imagesTs/
-              ├── labelsTr/
-              ├── labelsTs/
-              ├── dataset.json
-           ├── Task006_Lung
-       ├── unetr_pp_cropped_data/
-           ├── Task006_Lung
- ```
-   The dataset folders for BRaTs should be organized as follows: 
-
-```
-./DATASET_Tumor/
-  ├── unetr_pp_raw/
-      ├── unetr_pp_raw_data/
-           ├── Task03_tumor/
-              ├── imagesTr/
-              ├── imagesTs/
-              ├── labelsTr/
-              ├── labelsTs/
-              ├── dataset.json
-           ├── Task003_tumor
-       ├── unetr_pp_cropped_data/
-           ├── Task003_tumor
- ```
- 
 Please refer to [Setting up the datasets](https://github.com/282857341/nnFormer) on nnFormer repository for more details.
 Alternatively, you can download the preprocessed dataset for [Synapse](https://mbzuaiac-my.sharepoint.com/:u:/g/personal/abdelrahman_youssief_mbzuai_ac_ae/EbHDhSjkQW5Ak9SMPnGCyb8BOID98wdg3uUvQ0eNvTZ8RA?e=YVhfdg), [ACDC](https://mbzuaiac-my.sharepoint.com/:u:/g/personal/abdelrahman_youssief_mbzuai_ac_ae/EY9qieTkT3JFrhCJQiwZXdsB1hJ4ebVAtNdBNOs2HAo3CQ?e=VwfFHC), [Decathlon-Lung](https://mbzuaiac-my.sharepoint.com/:u:/g/personal/abdelrahman_youssief_mbzuai_ac_ae/EWhU1T7c-mNKgkS2PQjFwP0B810LCiX3D2CvCES2pHDVSg?e=OqcIW3), [BRaTs](https://mbzuaiac-my.sharepoint.com/:u:/g/personal/abdelrahman_youssief_mbzuai_ac_ae/EaQOxpD2yE5Btl-UEBAbQa0BYFBCL4J2Ph-VF_sqZlBPSQ?e=DFY41h), and extract it under the project directory.
 
 ## Training
-The following scripts can be used for training our UNETR++ model on the datasets:
+The following scripts can be used for training our Zig-RiR model on the datasets:
 ```shell
-bash training_scripts/run_training_synapse.sh
-bash training_scripts/run_training_acdc.sh
-bash training_scripts/run_training_lung.sh
-bash training_scripts/run_training_tumor.sh
+
+###############2D dataset############### We also provide 2D training scripts for the 3D Synapse and ACDC datasets, referring to the slicing data preprocessing script in 2D TransUnet.
+CUDA_VISIBLE_DEVICES=0 python train.py --dataset ISIC16 --end_epoch 200 --warm_epochs 5 --lr 0.0003 --train_batchsize 8 --crop_size 512 512 --nclass 2
+
+###############3D dataset############### We refer to the official UNETR++ repository when training 3D datasets. 
+CUDA_VISIBLE_DEVICES=0 python /unetr_pp/run/run_training.py 3d_fullres unetr_pp_trainer_synapse 2 0
+CUDA_VISIBLE_DEVICES=0 python /unetr_pp/run/run_training.py 3d_fullres unetr_pp_trainer_acdc 1 0
+
 ```
 
 <hr />
