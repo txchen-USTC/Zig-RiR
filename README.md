@@ -136,8 +136,8 @@ The following scripts can be used for training our Zig-RiR model on the datasets
 CUDA_VISIBLE_DEVICES=0 python train.py --dataset ISIC16 --end_epoch 200 --warm_epochs 5 --lr 0.0003 --train_batchsize 8 --crop_size 512 512 --nclass 2
 
 ###############3D dataset############### We refer to the official UNETR++ repository when training 3D datasets. 
-CUDA_VISIBLE_DEVICES=0 python /unetr_pp/run/run_training.py 3d_fullres unetr_pp_trainer_synapse 2 0
-CUDA_VISIBLE_DEVICES=0 python /unetr_pp/run/run_training.py 3d_fullres unetr_pp_trainer_acdc 1 0
+CUDA_VISIBLE_DEVICES=0 python /zig_rir3d/run/run_training.py 3d_fullres unetr_pp_trainer_synapse 2 0
+CUDA_VISIBLE_DEVICES=0 python /zig_rir3d/run/run_training.py 3d_fullres unetr_pp_trainer_acdc 1 0
 
 ```
 
@@ -145,11 +145,11 @@ CUDA_VISIBLE_DEVICES=0 python /unetr_pp/run/run_training.py 3d_fullres unetr_pp_
 
 ## Evaluation
 
-To reproduce the results of UNETR++: 
+To reproduce the results of Zig-RiR: 
 
 1- Download [Synapse weights](https://drive.google.com/file/d/13JuLMeDQRR_a3c3tr2V2oav6I29fJoBa) and paste ```model_final_checkpoint.model``` in the following path:
 ```shell
-unetr_pp/evaluation/unetr_pp_synapse_checkpoint/unetr_pp/3d_fullres/Task002_Synapse/unetr_pp_trainer_synapse__unetr_pp_Plansv2.1/fold_0/
+zig_rir3d/evaluation/unetr_pp_synapse_checkpoint/unetr_pp/3d_fullres/Task002_Synapse/unetr_pp_trainer_synapse__unetr_pp_Plansv2.1/fold_0/
 ```
 Then, run 
 ```shell
@@ -157,30 +157,11 @@ bash evaluation_scripts/run_evaluation_synapse.sh
 ```
 2- Download [ACDC weights](https://drive.google.com/file/d/15YXiHai1zLc1ycmXaiSHetYbLGum3tV5) and paste ```model_final_checkpoint.model``` it in the following path:
 ```shell
-unetr_pp/evaluation/unetr_pp_acdc_checkpoint/unetr_pp/3d_fullres/Task001_ACDC/unetr_pp_trainer_acdc__unetr_pp_Plansv2.1/fold_0/
+zig_rir3d/evaluation/unetr_pp_acdc_checkpoint/unetr_pp/3d_fullres/Task001_ACDC/unetr_pp_trainer_acdc__unetr_pp_Plansv2.1/fold_0/
 ```
 Then, run 
 ```shell
 bash evaluation_scripts/run_evaluation_acdc.sh
-```
-
-
-3- Download [Decathlon-Lung weights](https://mbzuaiac-my.sharepoint.com/:u:/g/personal/abdelrahman_youssief_mbzuai_ac_ae/ETAlc8WTjV1BhZx7zwFpA8UBS4og6upb1qX2UKkypMoTjw?e=KfzAiG) and paste ```model_final_checkpoint.model``` it in the following path:
-```shell
-unetr_pp/evaluation/unetr_pp_lung_checkpoint/unetr_pp/3d_fullres/Task006_Lung/unetr_pp_trainer_lung__unetr_pp_Plansv2.1/fold_0/
-```
-Then, run 
-```shell
-bash evaluation_scripts/run_evaluation_lung.sh
-```
-
-4- Download [BRaTs weights](https://drive.google.com/file/d/1LiqnVKKv3DrDKvo6J0oClhIFirhaz5PG) and paste ```model_final_checkpoint.model``` it in the following path:
-```shell
-unetr_pp/evaluation/unetr_pp_lung_checkpoint/unetr_pp/3d_fullres/Task003_tumor/unetr_pp_trainer_tumor__unetr_pp_Plansv2.1/fold_0/
-```
-Then, run 
-```shell
-bash evaluation_scripts/run_evaluation_tumor.sh
 ```
 
 <hr />
@@ -199,6 +180,3 @@ If you use our work, please consider citing:
   doi={10.1109/TMI.2024.3398728}}
 
 ```
-
-## Contact
-Should you have any question, please create an issue on this repository or contact me at abdelrahman.youssief@mbzuai.ac.ae.
