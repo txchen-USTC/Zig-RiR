@@ -4,7 +4,7 @@
 
 University of Science and Technology of China<sup>1</sup>, Alibaba Cloud<sup>2</sup>, University of Oxford<sup>3</sup>, The Alan Turing Institute<sup>4</sup>, Trinity College Dublin<sup>5</sup>, Alibaba DAMO Academy<sup>6</sup>
 
-[![paper](https://img.shields.io/badge/Paper-<COLOR>.svg)](https://ieeexplore.ieee.org/document/10526382)
+[![paper](https://img.shields.io/badge/Paper-<COLOR>.svg)](https://ieeexplore.ieee.org/document/10969076)
 
 
 ## :rocket: News
@@ -147,7 +147,7 @@ CUDA_VISIBLE_DEVICES=0 python /zig_rir3d/run/run_training.py 3d_fullres unetr_pp
 
 To reproduce the results of Zig-RiR: 
 
-1- Download [Synapse weights](https://drive.google.com/file/d/13JuLMeDQRR_a3c3tr2V2oav6I29fJoBa) and paste ```model_final_checkpoint.model``` in the following path:
+1- Find your saved Synapse weight and paste ```model_final_checkpoint.model``` in the following path:
 ```shell
 zig_rir3d/evaluation/unetr_pp_synapse_checkpoint/unetr_pp/3d_fullres/Task002_Synapse/unetr_pp_trainer_synapse__unetr_pp_Plansv2.1/fold_0/
 ```
@@ -155,7 +155,7 @@ Then, run
 ```shell
 bash evaluation_scripts/run_evaluation_synapse.sh
 ```
-2- Download [ACDC weights](https://drive.google.com/file/d/15YXiHai1zLc1ycmXaiSHetYbLGum3tV5) and paste ```model_final_checkpoint.model``` it in the following path:
+2- Find your saved ACDC weight and paste ```model_final_checkpoint.model``` it in the following path:
 ```shell
 zig_rir3d/evaluation/unetr_pp_acdc_checkpoint/unetr_pp/3d_fullres/Task001_ACDC/unetr_pp_trainer_acdc__unetr_pp_Plansv2.1/fold_0/
 ```
@@ -167,16 +167,14 @@ bash evaluation_scripts/run_evaluation_acdc.sh
 <hr />
 
 ## Acknowledgement
-This repository is built based on [nnFormer](https://github.com/282857341/nnFormer) repository.
+This repository is built based on [UNETR++](https://github.com/Amshaker/unetr_plus_plus/tree/main) and [nnFormer](https://github.com/282857341/nnFormer) repository.
 
 ## Citation
 If you use our work, please consider citing:
 ```bibtex
-@ARTICLE{10526382,
-  title={UNETR++: Delving into Efficient and Accurate 3D Medical Image Segmentation}, 
-  author={Shaker, Abdelrahman M. and Maaz, Muhammad and Rasheed, Hanoona and Khan, Salman and Yang, Ming-Hsuan and Khan, Fahad Shahbaz},
-  journal={IEEE Transactions on Medical Imaging}, 
-  year={2024},
-  doi={10.1109/TMI.2024.3398728}}
+## Yet to be announced.
 
 ```
+
+## Contact
+Should you have any question, you can contact us at txchen@mail.ustc.edu.cn and xd_zhou@mail.ustc.edu.cn.
