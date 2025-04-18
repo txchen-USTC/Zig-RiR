@@ -177,4 +177,4 @@ If you use our work, please consider citing:
 ```
 
 ## Contact
-Should you have any question, you can contact us at txchen@mail.ustc.edu.cn and xd_zhou@mail.ustc.edu.cn.
+Should you have any question, you may contact the first two authors at txchen@mail.ustc.edu.cn and xd_zhou@mail.ustc.edu.cn.
