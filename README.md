@@ -149,10 +149,11 @@ CUDA_VISIBLE_DEVICES=0 python /zig_rir3d/run/run_training.py 3d_fullres unetr_pp
 <hr />
 
 ## Evaluation
-
-To reproduce the results of Zig-RiR: 
-
-1- Find your saved Synapse weight and paste ```model_final_checkpoint.model``` in the following path:
+1- For 2D ISIC dataset, you can run the following command for evaluation:
+```shell
+CUDA_VISIBLE_DEVICES=0 python test2d.py --dataset ISIC16 --end_epoch 200 --warm_epochs 5 --lr 0.0003 --train_batchsize 8 --crop_size 512 512 --nclass 2
+```
+2- For 3D Synapse dataset, find your saved Synapse weight and paste ```model_final_checkpoint.model``` in the following path:
 ```shell
 zig_rir3d/evaluation/unetr_pp_synapse_checkpoint/unetr_pp/3d_fullres/Task002_Synapse/unetr_pp_trainer_synapse__unetr_pp_Plansv2.1/fold_0/
 ```
@@ -160,7 +161,7 @@ Then, run
 ```shell
 bash evaluation_scripts/run_evaluation_synapse.sh
 ```
-2- Find your saved ACDC weight and paste ```model_final_checkpoint.model``` it in the following path:
+3- For 3D ACDC dataset, find your saved ACDC weight and paste ```model_final_checkpoint.model``` it in the following path:
 ```shell
 zig_rir3d/evaluation/unetr_pp_acdc_checkpoint/unetr_pp/3d_fullres/Task001_ACDC/unetr_pp_trainer_acdc__unetr_pp_Plansv2.1/fold_0/
 ```
