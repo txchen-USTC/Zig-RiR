@@ -12,7 +12,6 @@ University of Science and Technology of China<sup>1</sup>, Alibaba Cloud<sup>2</
 
 <hr />
 
-![main figure](media/intro_fig.png)
 > **Abstract:** *Medical image segmentation has made signiffcant
  strides with the development of basic models.
 Speciffcally, models that combine CNNs with transformers
@@ -48,13 +47,19 @@ high-resolution medical images.*
 
 
 ## Architecture overview of Zig-RiR
-Overview of our Zig-RiR with hierarchical encoder-decoder structure. Zig-RiR adopts a U-shaped
+Overview of our Zig-RiR with hierarchical encoder-decoder structure. 
+
+![Architecture Overview](asset/overview.jpg)
+
+Zig-RiR adopts a U-shaped
 architecture consisting of a convolutional stem, a Zig-RiR
 encoder, and a plain decoder. The key innovation lies in
 the Zig-RiR block, which features a nested RWKV-in-RWKV
 structure and a novel Zigzag WKV attention mechanism.
 
-![Architecture overview](asset/overview.jpg)
+![Zig-RiR Block](asset/rir_block.jpg)
+
+![Zigzag RWKV Block](asset/zig_rwkv_block.jpg)
 
 <hr />
 
