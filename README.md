@@ -1,6 +1,6 @@
 # [TMI 2025] Zig-RiR: Zigzag RWKV-in-RWKV for Efficient Medical Image Segmentation
 ![](https://i.imgur.com/waxVImv.png)
-[Tianxiang Chen](https://scholar.google.com/citations?user=vTy9Te8AAAAJ&hl=en&authuser=1&oi=sra)<sup>1,2</sup>, Xudong Zhou<sup>1</sup>, [Zhentao Tan](https://scholar.google.com/citations?user=VCX7itEAAAAJ&hl=en)<sup>1,2</sup>, [Yue Wu](https://scholar.google.com/citations?user=srajsjoAAAAJ&hl=en)<sup>2</sup>, [Ziyang Wang](https://scholar.google.com/citations?user=GWF20_wAAAAJ&hl=en)<sup>3,4</sup>, [Zi Ye*](https://scholar.google.com/citations?user=1V0CqfYAAAAJ&hl=en)<sup>5</sup>, [Tao Gong](https://scholar.google.com/citations?user=_JhW9D0AAAAJ&hl=en)<sup>1</sup>,  [Qi Chu](https://scholar.google.com/citations?user=JZjOMdsAAAAJ&hl=en)<sup>1</sup>,  [Nenghai Yu](https://scholar.google.com/citations?user=7620QAMAAAAJ&hl=en)<sup>1</sup>, and [Lu Le](https://scholar.google.com/citations?user=kZn0f6gAAAAJ&hl=en)<sup>6</sup>
+[Tianxiang Chen](https://scholar.google.com/citations?user=vTy9Te8AAAAJ&hl=en&authuser=1&oi=sra)<sup>1,2</sup>, Xudong Zhou<sup>1</sup>, [Zhentao Tan](https://scholar.google.com/citations?user=VCX7itEAAAAJ&hl=en)<sup>1,2</sup>, [Yue Wu](https://scholar.google.com/citations?user=srajsjoAAAAJ&hl=en)<sup>2</sup>, [Ziyang Wang](https://scholar.google.com/citations?user=GWF20_wAAAAJ&hl=en)<sup>3,4</sup>, [Zi Ye]*(https://scholar.google.com/citations?user=1V0CqfYAAAAJ&hl=en)<sup>5</sup>, [Tao Gong](https://scholar.google.com/citations?user=_JhW9D0AAAAJ&hl=en)<sup>1</sup>,  [Qi Chu](https://scholar.google.com/citations?user=JZjOMdsAAAAJ&hl=en)<sup>1</sup>,  [Nenghai Yu](https://scholar.google.com/citations?user=7620QAMAAAAJ&hl=en)<sup>1</sup>, and [Lu Le](https://scholar.google.com/citations?user=kZn0f6gAAAAJ&hl=en)<sup>6</sup>
 
 University of Science and Technology of China<sup>1</sup>, Alibaba Cloud<sup>2</sup>, University of Oxford<sup>3</sup>, The Alan Turing Institute<sup>4</sup>, Trinity College Dublin<sup>5</sup>, Alibaba DAMO Academy<sup>6</sup>
 
@@ -178,8 +178,13 @@ This repository is built based on [UNETR++](https://github.com/Amshaker/unetr_pl
 ## Citation
 If you use our work, please consider citing:
 ```bibtex
-## Yet to be announced.
-
+@article{chen2025zig,
+  title={Zig-RiR: Zigzag RWKV-in-RWKV for Efficient Medical Image Segmentation},
+  author={Chen, Tianxiang and Zhou, Xudong and Tan, Zhentao and Wu, Yue and Wang, Ziyang and Ye, Zi and Gong, Tao and Chu, Qi and Yu, Nenghai and Lu, Le},
+  journal={IEEE Transactions on Medical Imaging},
+  year={2025},
+  publisher={IEEE}
+}
 ```
 
 ## Contact
